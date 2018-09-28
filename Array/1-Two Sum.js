@@ -17,7 +17,6 @@ return [0, 1].
  * @return {number[]}
  */
 
-```js
 var twoSum = function(nums, target) {
     const hash = {};
     for(let n, i=0; i<nums.length; i++) {
@@ -28,4 +27,3 @@ var twoSum = function(nums, target) {
         hash[target-n] = i;
     }
 };
-```
