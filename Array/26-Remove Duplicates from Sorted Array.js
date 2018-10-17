@@ -20,6 +20,12 @@ It doesn't matter what values are set beyond the returned length.
 */
 
 /**
+ * 思路：
+ * 用两个指针来解决。两个指针主要是考虑两个问题：1.指针什么时候往后面走 2.什么时候调换指针的位置。
+ * 在这里，第一个指针来遍历当前的数组，第二个指针用来指向移除重复数值之后每个元素的位置，当不等时，第二个指针后移。
+ */
+
+/**
  * @param {number[]} nums
  * @return {number}
  */
@@ -28,8 +34,7 @@ var removeDuplicates = function(nums) {
     let link = 0;
     for(let i = 1; i < nums.length; i++) {
         if(nums[link] !== nums[i]) {
-            link++;
-            nums[link] = nums[i];
+            nums[++link] = nums[i];
         }
     }
     return link+1;
